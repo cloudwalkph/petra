@@ -10,7 +10,7 @@ class Project_task extends Model
      use SoftDeletes;
 
      protected $fillable = [
-        'complexity', 'deadline',
+        'complexity', 'deadline', 'project_id', 'user_id',
     ];
 
     protected $dates =['deleted_at'];

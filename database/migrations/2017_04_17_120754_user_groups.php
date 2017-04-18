@@ -15,7 +15,7 @@ class UserGroups extends Migration
     {
         Schema::create('user_groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('usertype');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +28,6 @@ class UserGroups extends Migration
      */
     public function down()
     {
-        dropIfExists('user_groups');
+        Schema::dropIfExists('user_groups');
     }
 }

@@ -11,6 +11,10 @@ class Project_user extends Model
 
     protected $dates =['deleted_at'];
 
+       protected $fillable = [
+        'project_id', 'user_id',
+    ];
+
 
  	 public function users()
     {

@@ -10,7 +10,7 @@ class Project_task_log extends Model
      use SoftDeletes;
 
      protected $fillable = [
-        'action',
+        'action', 'project_task_id',
     ];
 
     protected $dates =['deleted_at'];
