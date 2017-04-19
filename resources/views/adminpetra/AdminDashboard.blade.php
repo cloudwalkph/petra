@@ -153,10 +153,10 @@ desired effect
         <ul class="sidebar-menu">
           <li class="header">HEADER</li>
           <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="#"><i class="fa fa-link"></i><span>Projects</span></a></li>
-          <li><a href="#"><i class="fa fa-link"></i> <span>Task Details</span></a></li>
+          <li class="active"><a href="#"><i class="fa fa-list-ul"></i><span>Projects</span></a></li>
+          <li><a href="#"><i class="fa fa-tasks"></i> <span>Task Details</span></a></li>
           <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Members</span>
+            <a href="#"><i class="fa fa-users"></i> <span>Members</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
