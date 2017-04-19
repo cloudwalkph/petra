@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdmindashboardController extends Controller
+class AddProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,8 +12,9 @@ class AdmindashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('adminpetra.AdminProject');
+    {  
+       $projects = Project::all();
+       return view('adminpetra.AdminProject')->with('projects', $projects);;
     }
 
     /**
