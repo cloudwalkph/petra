@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->integer('user_group_id')->unsigned();
             $table->foreign('user_group_id')->references('id')->on('user_groups');
-            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
             $table->softDeletes();

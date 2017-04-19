@@ -19,3 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/project', 'AdminDashboardController@index');
+
+Route::get('/user', 'AdminAddUserController@create');
+
+Route::post('/user', 'AdminAddUserController@store');

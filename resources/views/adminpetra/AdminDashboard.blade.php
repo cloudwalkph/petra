@@ -279,6 +279,7 @@ desired effect
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
+  <script type="text/javascript" language="javascript" src="js/uploadImage.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
