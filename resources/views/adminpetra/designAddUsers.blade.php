@@ -34,10 +34,9 @@
 			display: block;
 		}
 
-		#img-upload{
-			width: 100%;
+		.img-upload{
+			width: 2%;
 		}
-
 
 		.container{
 			margin-top:20px;
@@ -92,8 +91,6 @@
 					<i class="glyphicon glyphicon-search"></i>
 				</button>
 			</div>
-			
-			
 
 		</div>
 
@@ -112,15 +109,13 @@
 						<!--start-->
 						<div>
 							<div class="form-group{{ $errors->has('profile_picture') ? ' has-error' : '' }}">
-								<label for="profile_picture" class="col-md-4 control-label">Profile Picture</label><br><br>
-
+			
 								<div class="col-md-6">
 									<script type="text/javascript" language="javascript" src="js\uploadImage.js"></script>
 									<!--input id="profile_picture" type="profile_picture" class="form-control" name="profile_picture" value="{{ old('profile_picture') }}" required -->
 
 									<div class="input-group image-preview">
-										<input id="profile_picture" type="profile_picture" class="form-control image-preview-filename"
-										name="profile_picture" value="" disabled="disabled"> 
+										<input id="profile_picture" type="profile_picture" class="form-control image-preview-filename" value="{{ old('profile_picture') }}" name="profile_picture" disabled="disabled"> 
 										<!-- don't give a name === doesn't send on POST/GET -->
 										<span class="input-group-btn">
 											<!-- image-preview-clear button -->
@@ -204,7 +199,6 @@
 	</div>
 </div>
 
-
 <div class="table-responsive">
 	<table class="table">
 		<thead>
@@ -217,16 +211,14 @@
 			</tr>
 		</thead>
 		<tbody>
-		@foreach($userprofiles as $userprofile)
+			@foreach($userprofiles as $userprofile)
 			<tr>
-				<td><img src="{{ $userprofile->profile_picture }}" class="user-image" alt="User Image"> </td>
+				<td><img src="{{ $userprofile->profile_picture }}" class="img-responsive img-circle img-upload" alt="User Image"> </td>
 				<td>{{ $userprofile->first_name }} </td>
 				<td>{{ $userprofile->last_name }}</td>
 				<td>{{ $userprofile->position }}</td>
 				<td><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i></a></td>
-
-
 				</tr>
 				@endforeach
 			</tbody>

@@ -57,7 +57,7 @@ class adminAddUserController extends Controller
         $userProfile->position = $request->position;
         $userProfile->gender = $request->gender;
         $userProfile->user_id = $userid;
-        $id = $userProfile->id;
+        $id = $user->id;
         $file = request()->file('profile_picture');
         $ext = $file->guessClientExtension();
         $path =  $file->storeAs('public',"$id.{$ext}");
@@ -65,8 +65,8 @@ class adminAddUserController extends Controller
 
         $userProfile->save();
 
-         $userprofile = User_profile::all();
-       return view('adminpetra.designAddUsers')->with('userprofiles', $userprofile);
+        $userprofile = User_profile::all();
+        return view('adminpetra.designAddUsers')->with('userprofiles', $userprofile);
     }
 
     /**
