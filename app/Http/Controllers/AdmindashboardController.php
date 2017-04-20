@@ -13,7 +13,7 @@ class AdmindashboardController extends Controller
      */
     public function index()
     {
-        return view('adminpetra.AdminDashboard');
+        return view('adminpetra.AdminProject');
     }
 
     /**
