@@ -81,7 +81,7 @@ class AddProjectController extends Controller
      */
     public function show($id)
     {
-        trytrytry//
+     //
     }
 
     /**
