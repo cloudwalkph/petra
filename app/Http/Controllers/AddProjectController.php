@@ -56,7 +56,6 @@ class AddProjectController extends Controller
                 ->whereColumn([
                     ['last_name', '=', '$member']
                 ])->value('user_id');
-
         $project = new Project;
         $userid = $user->id;
         $project->name = $request->name;
@@ -82,7 +81,7 @@ class AddProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        trytrytry//
     }
 
     /**
