@@ -80,11 +80,16 @@
             <div class="form-group">
               <label class="control-label col-sm-2" for="pwd">Member:</label>
               <div class="col-sm-10"> 
-                <select class=" form-control" id="projMember" type="name" name=projMember
-                value="{{ old('name') }}" required>
+                <select class=" form-control" id="member" type="member" name=member
+                value="{{ old('member') }}" required>
                 <option></option>
-                <option value="admin">Julie Anne San Jose</option>
-                <option value="Employee">Ronalyn Magbanua</option>
+
+              @foreach($userprofiles as $userprofile)
+                <option value="{{ $userprofile->last_name }}">
+                              {{ $userprofile->first_name }}
+                              {{ $userprofile->last_name }}</option>
+                @endforeach
+
               </select>
 
               <script type="text/javascript">

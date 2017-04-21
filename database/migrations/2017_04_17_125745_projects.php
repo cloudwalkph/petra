@@ -18,6 +18,9 @@ class Projects extends Migration
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->string('name');
+            $table->string('type');
+            $table->string('status');
+            $table->integer('complexity')->nullable();
             $table->string('description')->nullable();
             $table->date('start_date');
             $table->date('estimated_deadline');

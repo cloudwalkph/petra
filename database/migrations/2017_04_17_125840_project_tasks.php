@@ -19,7 +19,7 @@ class ProjectTasks extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->integer('complexity')->nullable();
+            $table->string('status');
             $table->date('deadline')->nullable();
             $table->timestamps();
             $table->softDeletes();
