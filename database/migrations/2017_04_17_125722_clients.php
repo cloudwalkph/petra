@@ -15,7 +15,7 @@ class Clients extends Migration
     {
           Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('client_name');
             $table->softDeletes();
             $table->timestamps();
         });

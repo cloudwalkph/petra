@@ -14,15 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 Route::get('/project', 'AddProjectController@create');
+Route::post('/project', 'AddProjectController@store');
 
 Route::get('/user', 'AdminAddUserController@create');
-
 Route::post('/user', 'AdminAddUserController@store');
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index');

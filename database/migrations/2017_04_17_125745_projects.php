@@ -22,7 +22,7 @@ class Projects extends Migration
             $table->string('status');
             $table->integer('complexity')->nullable();
             $table->string('description')->nullable();
-            $table->date('start_date');
+            $table->date('start_date')->nullable();
             $table->date('estimated_deadline');
             $table->softDeletes();
             $table->timestamps();

@@ -10,7 +10,7 @@ class Client extends Model
     use SoftDeletes;
 
      protected $fillable = [
-        'name',
+        'client_name',
     ];
 
     protected $dates =['deleted_at'];

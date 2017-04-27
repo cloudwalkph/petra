@@ -10,7 +10,7 @@ class Project extends Model
       use SoftDeletes;
 
      protected $fillable = [
-        'name', 'description', 'start_date',
+        'client_id', 'name', 'description', 'start_date',
          'estimated_deadline', 'type', 'complexity', 'status',
     ];
 
@@ -25,5 +25,10 @@ class Project extends Model
      public function project_tasks()
     {
         return $this->belongsTo('App\Project_task');
+    }
+
+       public function user_profiles()
+    {
+        return $this->belongsToMany('App\User_profile');
     }
 }

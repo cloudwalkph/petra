@@ -21,4 +21,9 @@ class User_profile extends Model
     {
         return $this->hasOne('App\User');
     }
+
+    public function projects()
+    {
+        return $this->belongsToMany('App\Project');
+    }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
 use App\User_profile;
 use App\User;
 use App\User_group;
@@ -45,7 +47,8 @@ class adminAddUserController extends Controller
         $user = new User;
         $usergroupid = $user_group->id;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $password = Hash::make("$request->password");
+        $user->password = $password;
         $user->user_group_id = $usergroupid;
         $user->save();
 
