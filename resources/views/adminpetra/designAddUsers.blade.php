@@ -71,6 +71,13 @@
 		{
 			display: table-cell;
 		}
+		.tdstyle{
+			width: 20%;
+		}
+		.imgsize{
+			width: 50px;
+			height: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -109,7 +116,7 @@
 						<!--start-->
 						<div>
 							<div class="form-group{{ $errors->has('profile_picture') ? ' has-error' : '' }}">
-			
+
 								<div class="col-md-6">
 									<script type="text/javascript" language="javascript" src="js\uploadImage.js"></script>
 									<!--input id="profile_picture" type="profile_picture" class="form-control" name="profile_picture" value="{{ old('profile_picture') }}" required -->
@@ -213,11 +220,11 @@
 		<tbody>
 			@foreach($userprofiles as $userprofile)
 			<tr>
-				<td><img src="{{ $userprofile->profile_picture }}" class="img-responsive img-circle img-upload" alt="User Image"> </td>
-				<td>{{ $userprofile->first_name }} </td>
-				<td>{{ $userprofile->last_name }}</td>
-				<td>{{ $userprofile->position }}</td>
-				<td><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+				<td class="tdstyle"><img src="{{ $userprofile->profile_picture }}" class="img-responsive img-circle img-upload imgsize" alt="User Image"> </td>
+				<td class="tdstyle">{{ $userprofile->first_name }} </td>
+				<td class="tdstyle">{{ $userprofile->last_name }}</td>
+				<td class="tdstyle">{{ $userprofile->position }}</td>
+				<td class="tdstyle"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i></a></td>
 				</tr>
 				@endforeach
