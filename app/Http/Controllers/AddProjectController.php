@@ -34,8 +34,8 @@ class AddProjectController extends Controller
         $project_user = DB::table('project_user_profile')
             ->join('user_profiles', 'project_user_profile.user_profile_id', '=', 'user_profiles.id')
             ->join('projects', 'project_user_profile.project_id', '=', 'projects.id')
-            ->select('user_profiles.first_name', 'user_profiles.last_name',
-             'projects.name', 'projects.description', 'projects.estimated_deadline', 'projects.type',
+            ->select('user_profiles.profile_picture','projects.name', 'projects.description',
+             'projects.estimated_deadline', 'projects.type',
              'projects.complexity', 'projects.status')
             ->get();
 
@@ -75,9 +75,15 @@ class AddProjectController extends Controller
 
         $user->projects()->save($project);
 
+       $project_user = DB::table('project_user_profile')
+            ->join('user_profiles', 'project_user_profile.user_profile_id', '=', 'user_profiles.id')
+            ->join('projects', 'project_user_profile.project_id', '=', 'projects.id')
+            ->select('user_profiles.profile_picture','projects.name', 'projects.description',
+             'projects.estimated_deadline', 'projects.type',
+             'projects.complexity', 'projects.status')
+            ->get();
+
         $userprofile = User_profile::all();
-        $project_user = Project::all();
-        /*$project_user = User_profile::find(1)->projects()->get();*/
         return view('adminpetra.AdminProject')->with(['projects' => $project_user, 'userprofiles' => $userprofile]);
 
     }

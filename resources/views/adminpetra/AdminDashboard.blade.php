@@ -18,11 +18,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
       -->
       <link rel="stylesheet" href="dist/css/skins/skin-yellow.css">
+      <!-- jQuery 2.2.3 -->
+      <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +34,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <link rel="stylesheet" type="text/css" media="screen"
+  href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+  <link rel="stylesheet" href="distselect2/css/select2.min.css">
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -63,7 +72,7 @@ desired effect
         <span class="logo-mini"><img src="CWDlogo.png"></span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b><img src="CWDlogo.png"></span>
-       
+
       </a>
 
       <!-- Header Navbar -->
@@ -272,17 +281,52 @@ desired effect
 
 <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-  <script type="text/javascript" language="javascript" src="js/uploadImage.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
-   </body>
-   </html>
+<script type="text/javascript" language="javascript" src="js/uploadImage.js"></script>
+
+<script type="text/javascript"
+src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+</script>
+
+<script type="text/javascript"
+src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+</script>
+<!-- select2 js -->
+<script src="distselect2/js/select2.min.js"></script>
+
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<!-- atepicker script -->
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker4').datetimepicker({pickTime: false});
+  });
+</script>
+</body>
+</html>

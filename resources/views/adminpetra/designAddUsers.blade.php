@@ -2,83 +2,9 @@
 @section('dashboardContent')
 
 <head>
-	<link href="bootstrap-3.3.7-dist\css\bootstrap.min.css" rel="stylesheet">
-	<script href="bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
-	<script type="text/javascript" src="jquery-3.1.1.js"></script>
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<link href="table.css" rel="stylesheet">
 	<title>Add Users</title>
-	<style type="text/css">
-		.inp
-		{
-			position: absolute;
-			width: 20%;
-			height: 5%;
-		}
-		.btn-file {
-			position: relative;
-			overflow: hidden;
-		}
-		.btn-file input[type=file] {
-			position: absolute;
-			top: 0;
-			right: 0;
-			min-width: 100%;
-			min-height: 100%;
-			font-size: 100px;
-			text-align: right;
-			filter: alpha(opacity=0);
-			opacity: 0;
-			outline: none;
-			background: white;
-			cursor: inherit;
-			display: block;
-		}
-
-		.img-upload{
-			width: 2%;
-		}
-
-		.container{
-			margin-top:20px;
-		}
-		.image-preview-input {
-			position: relative;
-			overflow: hidden;
-			margin: 0px;    
-			color: #333;
-			background-color: #fff;
-			border-color: #ccc;    
-		}
-		.image-preview-input input[type=file] {
-			position: absolute;
-			top: 0;
-			right: 0;
-			margin: 0;
-			padding: 0;
-			font-size: 20px;
-			cursor: pointer;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
-		.image-preview-input-title {
-			margin-left:2px;
-		}
-		#mom{
-			display: table;
-			width: 10%;
-		}
-		.baby
-		{
-			display: table-cell;
-		}
-		.tdstyle{
-			width: 20%;
-		}
-		.imgsize{
-			width: 50px;
-			height: 50px;
-		}
-	</style>
+	
 </head>
 <body>
 	<form action="/user" enctype="multipart/form-data" role="form" class="form-horizontal" method="POST">
@@ -92,13 +18,6 @@
 		<div class="row" id="mom">
 			<!-- Trigger the modal with a button -->
 			<div class="baby"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add Member</button></div>
-			<div class="baby"><input type="text" name="search" id="search" placeholder="search" class="form-control form-rounded" style="width: 150px"></div>
-			<div class="baby">
-				<button class="btn btn-default" type="button" id = "btnSearch" >
-					<i class="glyphicon glyphicon-search"></i>
-				</button>
-			</div>
-
 		</div>
 
 		<!-- Modal -->
@@ -206,31 +125,55 @@
 	</div>
 </div>
 
-<div class="table-responsive">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Photo</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Account Type</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($userprofiles as $userprofile)
-			<tr>
-				<td class="tdstyle"><img src="{{ $userprofile->profile_picture }}" class="img-responsive img-circle img-upload imgsize" alt="User Image"> </td>
-				<td class="tdstyle">{{ $userprofile->first_name }} </td>
-				<td class="tdstyle">{{ $userprofile->last_name }}</td>
-				<td class="tdstyle">{{ $userprofile->position }}</td>
-				<td class="tdstyle"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i></a></td>
+
+<!-- Main content -->
+<div class="box">
+	<div class="box-header">
+		<h3 class="box-title">Hover Data Table</h3>
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body">
+	<table id="example1" class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>Photo</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Account Type</th>
+					<th>Action</th>
 				</tr>
-				@endforeach
-			</tbody>
-		</table>
-	</div>  
+			</thead>
+			<tbody>
+				@foreach($userprofiles as $userprofile)
+				<tr>
+					<td class="tdstyle"><img src="{{ $userprofile->profile_picture }}" class="img-responsive img-circle img-upload imgsize" alt="User Image"> </td>
+					<td class="tdstyle">{{ $userprofile->first_name }} </td>
+					<td class="tdstyle">{{ $userprofile->last_name }}</td>
+					<td class="tdstyle">{{ $userprofile->position }}</td>
+					<td class="tdstyle"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i></a></td>
+					</tr>
+					@endforeach
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>Photo</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Account Type</th>
+						<th>Action</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<!-- /.box-body -->
+	</div>
+	<!-- /.box -->
+
+	<!-- ... -->
+
+
+
 </form>
 </body>
 @endsection
